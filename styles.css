@@ -1,0 +1,1600 @@
+/* ==========================================================================
+   TKACHi Recruiting Agency — Design Styles
+   Color palette & typography closely matching reference site & guidelines
+   ========================================================================== */
+
+:root {
+  /* Colors - Authentic Warm Beige Palette (тепло-бежевый) */
+  --color-warm-beige: #E8DEC8;          /* Authentic natural warm beige */
+  --color-warm-beige-hover: #DFD3BA;    /* Slightly deeper warm beige tone */
+  --color-warm-beige-light: #F9F6F0;    /* Soft warm cream tint for content cards */
+  --color-warm-beige-border: #D8CCA8;   /* Subtle warm border accent */
+  --color-warm-beige-soft: #F4ECE1;     /* Warm beige accent for tags/notices */
+  --color-accent-warm: #8A6528;         /* Warm bronze/gold accent */
+  --color-ticker-grey: #ECEEF0;      /* Light grey ticker bar */
+  --color-white: #FFFFFF;
+  --color-black: #111111;
+  --color-black-hover: #262626;
+  --color-text-dark: #1F1F1F;
+  --color-text-muted: #555555;
+  --color-text-light: #F8F9FA;
+  --color-border-subtle: rgba(0, 0, 0, 0.08);
+  --color-red-dot: #E52B2B;          /* Distinctive red dot on TKACHi */
+  --color-success: #2E7D32;
+  --color-success-bg: #E8F5E9;
+  --color-error: #D32F2F;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Layout & Transitions */
+  --container-max-width: 1240px;
+  --header-height: 72px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+  --shadow-subtle: 0 4px 16px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.07);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-dark);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   1. ПЛАШКА СВЕРХУ (Top Bar)
+   ========================================================================== */
+.top-bar {
+  background-color: var(--color-warm-beige);
+  height: var(--header-height);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-smooth);
+}
+
+.top-bar-container {
+  max-width: var(--container-max-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Слева по плашке: «темное лого» */
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.dark-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.dark-logo-link:hover {
+  transform: scale(1.04);
+}
+
+.dark-logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
+}
+
+/* Посередине: TKACHi (i с красной точкой), цвет надписи - черный */
+.top-bar-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+  text-align: center;
+}
+
+.brand-text-center {
+  display: inline-block;
+  color: var(--color-black);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.brand-text-center:hover {
+  opacity: 0.85;
+}
+
+.brand-word {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+/* Stylized 'i' with a prominent red dot (single dot, no duplicate) */
+.red-dot-i {
+  position: relative;
+  color: var(--color-black);
+  text-transform: none;
+  font-style: normal;
+  display: inline-flex;
+  align-items: baseline;
+  margin-left: 1px;
+}
+
+.dotless-i {
+  font-style: normal;
+  display: inline-block;
+  color: var(--color-black);
+}
+
+.red-dot-i::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-red-dot);
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(229, 43, 43, 0.6);
+}
+
+/* Справа по плашке: кнопка «Оставить заявку», черная, надпись белая */
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.btn-top-cta {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+}
+
+.btn-top-cta:hover {
+  background-color: var(--color-black-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.btn-top-cta:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   2. ЗАГОЛОВОК (Hero Section)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 520px;
+  background-image: url('assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 90px 24px;
+  color: var(--color-white);
+}
+
+/* Darkening gradient overlay for optimal legibility while preserving image texture */
+.hero-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 18, 0.52) 0%,
+    rgba(25, 20, 22, 0.44) 50%,
+    rgba(10, 10, 12, 0.6) 100%
+  );
+  backdrop-filter: blur(0.5px);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Маленькая верхняя плашка/метка в стиле референса (SUSTAINABILITY GUIDE -> ПОДБОР ПЕРСОНАЛА) */
+.hero-subhead {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 18px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Главный заголовок со шрифтом и стилем как в шаблоне (Great Coffee Doing Better -> ПОДБОР ПЕРСОНАЛА ...) */
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 4.5vw, 56px);
+  font-weight: 600;
+  line-height: 1.16;
+  max-width: 900px;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================================
+   3. ПЛАШКА ПОД КАРТИНКОЙ (Running Ticker)
+   ========================================================================== */
+.ticker-section {
+  background-color: var(--color-ticker-grey);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 13px 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+.ticker-track-wrap {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marqueeScroll 32s linear infinite;
+  will-change: transform;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  letter-spacing: 0.03em;
+}
+
+.ticker-chunk {
+  padding: 0 10px;
+}
+
+.ticker-dot {
+  color: #888888;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* ==========================================================================
+   4. НАПОЛНЕНИЕ НИЖЕ (Main Content)
+   ========================================================================== */
+.content-section {
+  background-color: var(--color-white);
+  padding: 80px 24px 100px;
+}
+
+.content-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "intro cards"
+    "founders cards";
+  column-gap: 56px;
+  row-gap: 24px;
+  align-items: start;
+}
+
+/* Left Column: Text like in template */
+.content-left,
+.content-intro {
+  grid-area: intro;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.content-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 600;
+  line-height: 1.22;
+  color: var(--color-black);
+  letter-spacing: -0.01em;
+}
+
+.content-body p {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--color-text-dark);
+  font-weight: 400;
+}
+
+/* Special Offer Banner */
+.extra-offer-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: var(--color-warm-beige-light);
+  border-left: 3px solid var(--color-warm-beige-border);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-top: 8px;
+}
+
+.offer-icon {
+  color: var(--color-black);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.offer-text {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #333333;
+}
+
+.offer-text span {
+  font-weight: 700;
+  color: var(--color-accent-warm);
+}
+
+/* Founders / Agency info */
+.founders-info {
+  grid-area: founders;
+  align-self: start;
+  margin-top: 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.founders-names strong {
+  display: block;
+  font-size: 16px;
+  color: var(--color-black);
+}
+
+.founders-names span {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--color-black);
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--color-accent-warm);
+}
+
+/* ==========================================================================
+   Right Column: Four Expandable Beige Buttons
+   "плашки справа должны при наведении расширяться,так же и под телефоны сделай адаптацию"
+   ========================================================================== */
+.content-right {
+  grid-area: cards;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cards-eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+/* Base Card Style */
+.beige-card {
+  background-color: var(--color-warm-beige);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-subtle);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+.beige-card:focus-visible {
+  box-shadow: 0 0 0 3px rgba(232, 222, 200, 0.85), 0 0 0 5px var(--color-black);
+}
+
+/* Card Header: Acts as the button / trigger */
+.card-header {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--color-warm-beige);
+  transition: background-color 0.25s ease;
+}
+
+.beige-card:hover .card-header,
+.beige-card.is-open .card-header {
+  background-color: var(--color-warm-beige-hover);
+}
+
+.card-title {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-black);
+  letter-spacing: 0.01em;
+}
+
+.card-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-black);
+  transition: transform 0.35s ease;
+}
+
+.chevron-icon {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Card Content: Expandable container */
+.card-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  transition: max-height 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 0.3s ease,
+              padding 0.35s ease;
+  background-color: #FAF7F2;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Desktop Hover & Expansion
+   "плашки справа должны при наведении расширяться,так же и под телефоны сделай адаптацию" */
+@media (min-width: 769px) {
+  .beige-card {
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+  }
+
+  /* Physical card expansion on hover */
+  .beige-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px) scale(1.012);
+    border-color: rgba(0, 0, 0, 0.12);
+  }
+
+  /* Open / Expanded State */
+  .beige-card.is-open {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .beige-card.is-open .card-content {
+    max-height: 1800px;
+    opacity: 1;
+    padding: 24px;
+  }
+
+  .beige-card.is-open .chevron-icon {
+    transform: rotate(180deg);
+  }
+}
+
+/* Mobile & Touch: Click-driven toggle (.is-open) */
+@media (max-width: 768px) {
+  .beige-card.is-open {
+    box-shadow: var(--shadow-card);
+  }
+
+  .beige-card.is-open .card-content {
+    max-height: 2500px;
+    opacity: 1;
+    padding: 20px 16px;
+  }
+
+  .beige-card.is-open .chevron-icon {
+    transform: rotate(180deg);
+  }
+}
+
+/* ==========================================================================
+   Card 1 Content: Услуги и стоимость
+   "При наведении на одну из подсвечивается стоимость"
+   ========================================================================== */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.services-hint {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: 2px;
+}
+
+.service-item {
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all 0.28s ease;
+  outline: none;
+}
+
+.service-item-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.service-bullet {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-accent-warm);
+  background-color: var(--color-warm-beige-soft);
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+}
+
+.service-name {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+/* Подсветка стоимости при наведении */
+.service-price-badge {
+  background-color: #F1EAE0;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  transition: all 0.25s ease;
+}
+
+.price-highlight {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2B2B2B;
+  transition: all 0.25s ease;
+}
+
+.service-subtext {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+/* Dynamic highlight effect when hovered, focused, or active on touch */
+.service-item:hover,
+.service-item:focus-visible,
+.service-item.is-active {
+  border-color: #111111;
+  transform: translateX(4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.service-item:hover .service-price-badge,
+.service-item:focus-visible .service-price-badge,
+.service-item.is-active .service-price-badge {
+  background-color: #111111;
+  border-left: 3px solid var(--color-red-dot);
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-item:hover .price-highlight,
+.service-item:focus-visible .price-highlight,
+.service-item.is-active .price-highlight {
+  color: #FFFFFF;
+}
+
+.card-footer-action {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  text-align: right;
+}
+
+.btn-subaction {
+  background: none;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-accent-warm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.btn-subaction:hover {
+  background-color: rgba(140, 47, 61, 0.08);
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   Card 2 Content: Гарантии
+   ========================================================================== */
+.guarantees-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.guarantee-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.guarantee-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.guarantee-icon {
+  background-color: var(--color-warm-beige);
+  color: var(--color-black);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.guarantee-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 4px;
+}
+
+.guarantee-text {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Card 3 Content: Рассчитать стоимость (Калькулятор)
+   "В каждом есть возможность поставить годовой доход сотрудника и в соответствии с полем
+    есть множитель 0,1 , 0,15 или 0,18. Выходит итоговая сумма."
+   ========================================================================== */
+.calc-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calc-intro {
+  font-size: 13.5px;
+  color: var(--color-text-muted);
+}
+
+/* 3 категории персонала (Tabs) */
+.calc-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.calc-tab {
+  background-color: var(--color-white);
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.calc-tab .tab-label {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.calc-tab .tab-mult-badge {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #666;
+  background-color: #F0F0F0;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+}
+
+.calc-tab:hover {
+  border-color: var(--color-warm-beige-border);
+}
+
+.calc-tab.is-active {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.calc-tab.is-active .tab-label {
+  color: var(--color-white);
+}
+
+.calc-tab.is-active .tab-mult-badge {
+  background-color: #FFFFFF;
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+.calc-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.calc-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.field-label-row label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.monthly-equiv {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.discount-pill {
+  font-size: 11px;
+  font-weight: 600;
+  background-color: #D1E7DD;
+  color: #0F5132;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.calc-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.calc-input {
+  width: 100%;
+  padding: 10px 38px 10px 14px;
+  background-color: var(--color-white);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-black);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calc-input:focus {
+  border-color: #111111;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.currency-tag {
+  position: absolute;
+  right: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #888888;
+}
+
+.preset-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.preset-btn {
+  background-color: #EDE5D8;
+  border: none;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #444;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.preset-btn:hover {
+  background-color: #DFD4C2;
+  color: #000;
+}
+
+/* Stepper for Vacancies */
+.stepper-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stepper-btn {
+  width: 38px;
+  height: 38px;
+  background-color: var(--color-white);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-md);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.stepper-btn:hover {
+  background-color: #F0F0F0;
+}
+
+.calc-input-stepper {
+  width: 60px;
+  height: 38px;
+  text-align: center;
+  background-color: var(--color-white);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-black);
+  outline: none;
+}
+
+.calc-note {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Result Box */
+.calc-result-box {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.result-formula {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.result-total-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.total-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.total-value {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+}
+
+.calc-actions {
+  text-align: right;
+}
+
+/* ==========================================================================
+   Card 4 Content: Оставить заявку (Анкета)
+   "Ниспадающая анкета с полями:
+    Название компании
+    Количество вакансий (три уровня – Линейный персонал, Специалисты и Руководители,
+    ТОП-менеджеры и возможность в каждый вписать цифры)
+    ФИ
+    Номер телефона
+    Дополнительный способ связи (при необходимости)
+    Кнопка «отправить»
+    (заявки прилетает на olga.tkach@tkachi.pro и ilya.zotov@tkachi.pro)"
+   ========================================================================== */
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.req {
+  color: var(--color-red-dot);
+}
+
+.form-input {
+  width: 100%;
+  padding: 11px 14px;
+  background-color: var(--color-white);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
+  color: var(--color-black);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--color-black);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.form-input.is-invalid {
+  border-color: var(--color-error);
+  background-color: #FFF8F8;
+}
+
+.form-error-msg {
+  font-size: 12px;
+  color: var(--color-error);
+  display: none;
+}
+
+.form-error-msg.is-visible {
+  display: block;
+}
+
+/* 3-level Vacancies Stepper */
+.form-label-vacancies {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.vacancies-levels-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.level-box {
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.level-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.level-tag {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.level-sub {
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+}
+
+.stepper-compact .stepper-btn {
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+}
+
+.stepper-compact .calc-input-stepper {
+  width: 48px;
+  height: 32px;
+  font-size: 14px;
+}
+
+.form-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background-color: var(--color-warm-beige-soft);
+  border: 1px solid var(--color-warm-beige-border);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: #333333;
+  line-height: 1.45;
+}
+
+.form-notice svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #666;
+}
+
+.form-notice strong {
+  color: var(--color-black);
+}
+
+.form-submit-row {
+  margin-top: 10px;
+}
+
+.btn-form-submit {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-form-submit:hover:not(:disabled) {
+  background-color: var(--color-black-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.btn-form-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-form-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.btn-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: btnSpinnerAnim 0.7s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes btnSpinnerAnim {
+  to { transform: rotate(360deg); }
+}
+
+/* Success Feedback State */
+.form-success-box {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 28px 22px;
+  text-align: center;
+  border: 1px solid #C8E6C9;
+  box-shadow: 0 4px 16px rgba(46, 125, 50, 0.08);
+}
+
+.success-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-success-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.success-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 8px;
+}
+
+.success-text {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.success-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-reset-form {
+  background: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 22px;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.btn-reset-form:hover {
+  background-color: var(--color-black-hover);
+  transform: translateY(-1px);
+}
+
+.btn-direct-mailto {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-warm-beige-soft);
+  color: var(--color-black);
+  border: 1px solid var(--color-warm-beige-border);
+  padding: 9px 18px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-direct-mailto:hover {
+  background-color: var(--color-warm-beige);
+  color: var(--color-black);
+}
+
+.delivery-status-note {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #FFF8E1;
+  border: 1px solid #FFE082;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  color: #795548;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.direct-contact-hint {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 10px;
+}
+
+.direct-contact-hint a {
+  color: var(--color-black);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.direct-contact-hint a:hover {
+  color: var(--color-accent-warm);
+}
+
+/* ==========================================================================
+   5. ПОДВАЛ (Footer)
+   ========================================================================== */
+.site-footer {
+  background-color: #161616;
+  color: #CCCCCC;
+  padding: 44px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-logo-text {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.footer-logo-text .red-dot-i {
+  color: var(--color-white);
+}
+
+.footer-logo-text .red-dot-i::after {
+  background-color: var(--color-red-dot);
+}
+
+.footer-slogan {
+  font-size: 13px;
+  color: #999999;
+}
+
+.footer-copy {
+  font-size: 12.5px;
+  color: #777777;
+  margin-top: 8px;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: right;
+}
+
+.footer-contacts a {
+  font-size: 14px;
+  color: #EEEEEE;
+  transition: color 0.2s ease;
+}
+
+.footer-contacts a:hover {
+  color: var(--color-warm-beige);
+}
+
+/* ==========================================================================
+   6. АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ (Mobile Adaptation)
+   "так же и под телефоны сделай адаптацию"
+   ========================================================================== */
+@media (max-width: 992px) {
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* На телефонах:
+     1. Сначала идет текст об компании ("Мы знаем как человек влияет на бизнес...")
+     2. Потом 4 блока (Услуги и стоимость, Гарантии, Рассчитать стоимость, Оставить заявку)
+     3. Ниже сами контакты (Ольга Ткач & Илья Зотов, телефон, email)
+  */
+  .content-left,
+  .content-intro {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .content-right {
+    order: 2;
+    width: 100%;
+  }
+
+  .founders-info {
+    order: 3;
+    width: 100%;
+    margin-top: 8px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-border-subtle);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .top-bar-container {
+    padding: 0 16px;
+  }
+
+  .dark-logo-img {
+    height: 38px;
+  }
+
+  .brand-word {
+    font-size: 22px;
+    letter-spacing: 0.1em;
+  }
+
+  .btn-top-cta {
+    padding: 8px 14px;
+    font-size: 12.5px;
+  }
+
+  .hero-section {
+    min-height: 380px;
+    padding: 60px 16px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .ticker-section {
+    padding: 10px 0;
+  }
+
+  .ticker-item {
+    font-size: 13px;
+  }
+
+  .content-section {
+    padding: 48px 16px 64px;
+  }
+
+  .content-heading {
+    font-size: 28px;
+  }
+
+  .content-body p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .founders-info {
+    padding-top: 20px;
+  }
+
+  .founders-names strong {
+    font-size: 16.5px;
+  }
+
+  .founders-names span {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .contact-link {
+    font-size: 15px;
+    padding: 6px 0;
+    min-height: 38px;
+    gap: 10px;
+  }
+
+  .contact-link svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+  }
+
+  /* Cards on mobile: Expand on click */
+  .card-header {
+    padding: 16px 18px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .calc-tab {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .calc-tab .tab-mult-badge {
+    align-self: flex-start;
+  }
+
+  .level-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .level-box .stepper-wrap {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-contacts {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar-container {
+    padding: 0 12px;
+  }
+
+  .brand-word {
+    font-size: 19px;
+  }
+
+  .btn-top-cta {
+    padding: 7px 11px;
+    font-size: 11.5px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .preset-pills {
+    justify-content: space-between;
+  }
+
+  .preset-btn {
+    flex: 1 1 calc(50% - 4px);
+    text-align: center;
+  }
+}

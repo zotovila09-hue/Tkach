@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>TKACHi — Агентство по подбору персонала</title>
+  <meta name="description" content="TKACHi — агентство по подбору персонала. Экспертный поиск линейного персонала, специалистов, руководителей и ТОП-менеджеров. Новый взгляд на корпоративную культуру и командную работу.">
+  <meta name="keywords" content="подбор персонала, рекрутинг, кадровое агентство, ТКАЧи, TKACHi, подбор руководителей, подбор топ менеджеров">
+
+  <!-- Google Fonts: Cormorant Garamond for editorial headings & Inter for clean UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/logo-dark.png">
+</head>
+<body>
+
+  <!-- 1. ПЛАШКА СВЕРХУ (Top Bar) -->
+  <header class="top-bar" id="topHeader">
+    <div class="top-bar-container">
+      
+      <!-- Слева по плашке «темное лого» -->
+      <div class="top-bar-left">
+        <a href="#hero" class="dark-logo-link" aria-label="TKACHi Главная">
+          <img src="assets/logo-dark.png" alt="TKACHi dark logo" class="dark-logo-img">
+        </a>
+      </div>
+
+      <!-- Посередине TKACHi (i с красной точкой), цвет надписи - черный -->
+      <div class="top-bar-center">
+        <a href="#hero" class="brand-text-center">
+          <span class="brand-word">TKACH<span class="red-dot-i"><span class="dotless-i">ı</span></span></span>
+        </a>
+      </div>
+
+      <!-- Справа по плашке кнопка-дубли «Оставить заявку», цвет кнопки черный, надпись белая -->
+      <div class="top-bar-right">
+        <button type="button" class="btn-top-cta" id="topCtaBtn" aria-label="Оставить заявку">
+          Оставить заявку
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. ЗАГОЛОВОК (Hero Section with Background Image) -->
+    <section class="hero-section" id="hero">
+      <div class="hero-backdrop"></div>
+      <div class="hero-container">
+        <!-- Надпись со шрифтом и размером схожим с шаблоном -->
+        <p class="hero-subhead">ПОДБОР ПЕРСОНАЛА</p>
+        <h1 class="hero-title">Новый взгляд на корпоративную культуру и командную работу</h1>
+      </div>
+    </section>
+
+    <!-- 3. ПЛАШКА ПОД КАРТИНКОЙ (Running Ticker) -->
+    <section class="ticker-section" aria-label="Наши достижения">
+      <div class="ticker-track-wrap">
+        <div class="ticker-track" id="tickerTrack">
+          <!-- Text repeated for seamless infinite scrolling loop -->
+          <div class="ticker-item">
+            <span class="ticker-chunk">15 лет опыта</span>
+            <span class="ticker-dot">•</span>
+            <span class="ticker-chunk">Более 1 000 закрытых вакансий Специалистов, Руководителей и ТОП</span>
+            <span class="ticker-dot">•</span>
+            <span class="ticker-chunk">Более 10 000 закрытых линейных вакансий</span>
+            <span class="ticker-dot">•</span>
+          </div>
+          <div class="ticker-item" aria-hidden="true">
+            <span class="ticker-chunk">15 лет опыта</span>
+            <span class="ticker-dot">•</span>
+            <span class="ticker-chunk">Более 1 000 закрытых вакансий Специалистов, Руководителей и ТОП</span>
+            <span class="ticker-dot">•</span>
+            <span class="ticker-chunk">Более 10 000 закрытых линейных вакансий</span>
+            <span class="ticker-dot">•</span>
+          </div>
+          <div class="ticker-item" aria-hidden="true">
+            <span class="ticker-chunk">15 лет опыта</span>
+            <span class="ticker-dot">•</span>
+            <span class="ticker-chunk">Более 1 000 закрытых вакансий Специалистов, Руководителей и ТОП</span>
+            <span class="ticker-dot">•</span>
+            <span class="ticker-chunk">Более 10 000 закрытых линейных вакансий</span>
+            <span class="ticker-dot">•</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. НАПОЛНЕНИЕ НИЖЕ (Main Content: Left text, Right expandable beige buttons) -->
+    <section class="content-section" id="content">
+      <div class="content-container">
+        
+        <!-- 1. Текст об агентстве (на десктопе слева вверху, на мобильных — первым) -->
+        <div class="content-left content-intro" id="contentIntro">
+          <h2 class="content-heading">Мы знаем как человек влияет на бизнес.</h2>
+          <div class="content-body">
+            <p>
+              Мы делаем фокус на профиле кандидата и его личности и вместе с Клиентами формируем
+              его. Опираясь на свой личный и проверенный временем подход к подбору персонала,
+              находим Специалистов, которые способны принести Компании необходимый результат. В
+              своей работе действуем через принципы честности и открытости, а в работе с Клиентами
+              придерживаемся только партнерских взаимоотношений.
+            </p>
+          </div>
+
+          <!-- Дополнительная информация о создателях и спецпредложении -->
+          <div class="extra-offer-card">
+            <div class="offer-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <div class="offer-text">
+              <strong>Специальное предложение:</strong> Формирование профиля кандидата — <span>бесплатно</span> при заказе любой из услуг.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Блоки (на десктопе справа, на мобильных — вторым, между текстом и контактами) -->
+        <div class="content-right" id="actionsList">
+          <p class="cards-eyebrow">Подробнее об агентстве:</p>
+
+          <!-- 1й, название – Услуги и стоимость -->
+          <div class="beige-card" id="cardServices" data-card="services" tabindex="0">
+            <div class="card-header" role="button" aria-expanded="false" aria-controls="cardContentServices">
+              <span class="card-title">Услуги и стоимость</span>
+              <span class="card-indicator" aria-hidden="true">
+                <svg class="chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </div>
+            
+            <div class="card-content" id="cardContentServices">
+              <div class="services-list">
+                <p class="services-hint">Наведите курсор на услугу для подсветки условий:</p>
+
+                <!-- Ниспадающий список из 3х с подсветкой стоимости при наведении -->
+                <div class="service-item" tabindex="0">
+                  <div class="service-item-head">
+                    <span class="service-bullet">01</span>
+                    <span class="service-name">Подбор линейного персонала</span>
+                  </div>
+                  <div class="service-price-badge">
+                    <span class="price-highlight">10% от годового дохода сотрудника, при 3х и более вакансий 8%</span>
+                  </div>
+                  <p class="service-subtext">Быстрый массовый подбор рабочих специальностей, торгового и сервисного персонала с проверкой благонадежности.</p>
+                </div>
+
+                <div class="service-item" tabindex="0">
+                  <div class="service-item-head">
+                    <span class="service-bullet">02</span>
+                    <span class="service-name">Подбор Специалистов и Руководителей</span>
+                  </div>
+                  <div class="service-price-badge">
+                    <span class="price-highlight">15% от годового дохода сотрудника, при 3х и более вакансий 13%</span>
+                  </div>
+                  <p class="service-subtext">Точечный хедхантинг экспертов узкого профиля, руководителей отделов и ключевых проектных лидеров.</p>
+                </div>
+
+                <div class="service-item" tabindex="0">
+                  <div class="service-item-head">
+                    <span class="service-bullet">03</span>
+                    <span class="service-name">Подбор ТОП-менеджеров</span>
+                  </div>
+                  <div class="service-price-badge">
+                    <span class="price-highlight">18% от годового дохода сотрудника, допустимо обсуждение стоимости</span>
+                  </div>
+                  <p class="service-subtext">Executive Search для первых лиц компаний: генеральные директора, C-level менеджмент, совет директоров.</p>
+                </div>
+              </div>
+
+              <div class="card-footer-action">
+                <button type="button" class="btn-subaction" id="goToCalculatorBtn">
+                  Рассчитать точную стоимость в калькуляторе →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2й, название – Гарантии -->
+          <div class="beige-card" id="cardGuarantees" data-card="guarantees" tabindex="0">
+            <div class="card-header" role="button" aria-expanded="false" aria-controls="cardContentGuarantees">
+              <span class="card-title">Гарантии</span>
+              <span class="card-indicator" aria-hidden="true">
+                <svg class="chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </div>
+
+            <div class="card-content" id="cardContentGuarantees">
+              <div class="guarantees-list">
+                <!-- Ниспадающий список из 3х -->
+                <div class="guarantee-item">
+                  <div class="guarantee-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  </div>
+                  <div class="guarantee-info">
+                    <h4 class="guarantee-name">Фиксированный срок закрытия</h4>
+                    <p class="guarantee-text">Сроки подбора четко закрепляются в договоре. Первые резюме и собеседования с проверенными кандидатами предоставляем в течение 3–5 рабочих дней.</p>
+                  </div>
+                </div>
+
+                <div class="guarantee-item">
+                  <div class="guarantee-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  </div>
+                  <div class="guarantee-info">
+                    <h4 class="guarantee-name">Гарантированная замена в течение испытательного срока</h4>
+                    <p class="guarantee-text">Если сотрудник не пройдет испытательный срок, мы бесплатно и в кратчайшие сроки предоставим полноценную замену без дополнительных комиссий.</p>
+                  </div>
+                </div>
+
+                <div class="guarantee-item">
+                  <div class="guarantee-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  </div>
+                  <div class="guarantee-info">
+                    <h4 class="guarantee-name">Квалифицированные кандидаты</h4>
+                    <p class="guarantee-text">Все претенденты проходят экспертное многоэтапное собеседование, оценку компетенций (Hard &amp; Soft skills) и проверку рекомендаций с прошлых мест работы.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3й, название – Рассчитать стоимость -->
+          <div class="beige-card" id="cardCalculator" data-card="calculator" tabindex="0">
+            <div class="card-header" role="button" aria-expanded="false" aria-controls="cardContentCalculator">
+              <span class="card-title">Рассчитать стоимость</span>
+              <span class="card-indicator" aria-hidden="true">
+                <svg class="chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </div>
+
+            <div class="card-content" id="cardContentCalculator">
+              <div class="calc-box">
+                <p class="calc-intro">Выберите категорию персонала, годовой доход и количество вакансий:</p>
+
+                <!-- 3 позиции с множителями 0.1, 0.15, 0.18 -->
+                <div class="calc-tabs" role="radiogroup" aria-label="Категория персонала">
+                  <button type="button" class="calc-tab is-active" data-role="linear" data-base-mult="0.10" data-bulk-mult="0.08" aria-checked="true" role="radio">
+                    <span class="tab-label">Линейный персонал</span>
+                    <span class="tab-mult-badge">множитель 0,1 (10%)</span>
+                  </button>
+                  <button type="button" class="calc-tab" data-role="specialist" data-base-mult="0.15" data-bulk-mult="0.13" aria-checked="false" role="radio">
+                    <span class="tab-label">Специалисты и Руководители</span>
+                    <span class="tab-mult-badge">множитель 0,15 (15%)</span>
+                  </button>
+                  <button type="button" class="calc-tab" data-role="top" data-base-mult="0.18" data-bulk-mult="0.18" aria-checked="false" role="radio">
+                    <span class="tab-label">ТОП-менеджеры</span>
+                    <span class="tab-mult-badge">множитель 0,18 (18%)</span>
+                  </button>
+                </div>
+
+                <div class="calc-fields">
+                  <!-- Годовой доход сотрудника -->
+                  <div class="calc-field-group">
+                    <div class="field-label-row">
+                      <label for="calcAnnualIncome">Годовой доход сотрудника, ₽</label>
+                      <span class="monthly-equiv" id="calcMonthlyEquivalent">≈ 100 000 ₽ / мес.</span>
+                    </div>
+                    <div class="calc-input-wrap">
+                      <input type="text" id="calcAnnualIncome" class="calc-input" inputmode="numeric" value="1 200 000" aria-label="Годовой доход в рублях">
+                      <span class="currency-tag">₽</span>
+                    </div>
+                    <div class="preset-pills">
+                      <button type="button" class="preset-btn" data-income="800000">800 тыс.</button>
+                      <button type="button" class="preset-btn" data-income="1200000">1.2 млн</button>
+                      <button type="button" class="preset-btn" data-income="2400000">2.4 млн</button>
+                      <button type="button" class="preset-btn" data-income="5000000">5 млн</button>
+                    </div>
+                  </div>
+
+                  <!-- Количество вакансий -->
+                  <div class="calc-field-group">
+                    <div class="field-label-row">
+                      <label for="calcVacanciesCount">Количество вакансий</label>
+                      <span class="discount-pill" id="calcDiscountPill" style="display: none;">Скидка 2% активирована!</span>
+                    </div>
+                    <div class="stepper-wrap">
+                      <button type="button" class="stepper-btn" id="calcVacMinus" aria-label="Уменьшить">-</button>
+                      <input type="number" id="calcVacanciesCount" class="calc-input-stepper" min="1" max="100" value="1" aria-label="Количество вакансий">
+                      <button type="button" class="stepper-btn" id="calcVacPlus" aria-label="Увеличить">+</button>
+                    </div>
+                    <p class="calc-note" id="calcBulkHint">При 3-х и более вакансиях ставка снижается: линейный 8%, специалисты 13%.</p>
+                  </div>
+                </div>
+
+                <!-- Выходит итоговая сумма -->
+                <div class="calc-result-box">
+                  <div class="result-formula" id="calcFormula">
+                    1 200 000 ₽ × 0,10 × 1 вак.
+                  </div>
+                  <div class="result-total-row">
+                    <span class="total-label">Итоговая сумма:</span>
+                    <span class="total-value" id="calcTotalValue">120 000 ₽</span>
+                  </div>
+                </div>
+
+                <div class="calc-actions">
+                  <button type="button" class="btn-subaction" id="applyCalcToFormBtn">
+                    Перенести расчет в заявку →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4й, название – Оставить заявку -->
+          <div class="beige-card" id="cardApplication" data-card="application" tabindex="0">
+            <div class="card-header" role="button" aria-expanded="false" aria-controls="cardContentApplication">
+              <span class="card-title">Оставить заявку</span>
+              <span class="card-indicator" aria-hidden="true">
+                <svg class="chevron-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </div>
+
+            <div class="card-content" id="cardContentApplication">
+              <!-- Ниспадающая анкета с полями -->
+              <form class="application-form" id="applicationForm" action="https://formsubmit.co/ilya.zotov@tkachi.pro" method="POST" novalidate>
+                <input type="hidden" name="_cc" value="olga.tkach@tkachi.pro">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" id="formSubjectHidden" value="Новая заявка на подбор персонала — TKACHi">
+                
+                <!-- Название компании -->
+                <div class="form-group">
+                  <label for="companyName">Название компании <span class="req">*</span></label>
+                  <input type="text" id="companyName" name="companyName" class="form-input" placeholder="ООО «Инновации и Рост»" required>
+                  <div class="form-error-msg" id="errCompanyName">Пожалуйста, укажите название компании</div>
+                </div>
+
+                <!-- Количество вакансий (три уровня – Линейный персонал, Специалисты и Руководители, ТОП-менеджеры) -->
+                <div class="form-group">
+                  <label class="form-label-vacancies">
+                    Количество вакансий по уровням:
+                  </label>
+                  <div class="vacancies-levels-grid">
+                    
+                    <div class="level-box">
+                      <div class="level-header">
+                        <span class="level-tag">Линейный персонал</span>
+                        <span class="level-sub">ставка 10% / 8%</span>
+                      </div>
+                      <div class="stepper-wrap stepper-compact">
+                        <button type="button" class="stepper-btn form-vac-minus" data-target="vacLinear" aria-label="Меньше">-</button>
+                        <input type="number" id="vacLinear" name="vacLinear" class="calc-input-stepper" min="0" max="999" value="0">
+                        <button type="button" class="stepper-btn form-vac-plus" data-target="vacLinear" aria-label="Больше">+</button>
+                      </div>
+                    </div>
+
+                    <div class="level-box">
+                      <div class="level-header">
+                        <span class="level-tag">Специалисты и Руководители</span>
+                        <span class="level-sub">ставка 15% / 13%</span>
+                      </div>
+                      <div class="stepper-wrap stepper-compact">
+                        <button type="button" class="stepper-btn form-vac-minus" data-target="vacSpecialist" aria-label="Меньше">-</button>
+                        <input type="number" id="vacSpecialist" name="vacSpecialist" class="calc-input-stepper" min="0" max="999" value="1">
+                        <button type="button" class="stepper-btn form-vac-plus" data-target="vacSpecialist" aria-label="Больше">+</button>
+                      </div>
+                    </div>
+
+                    <div class="level-box">
+                      <div class="level-header">
+                        <span class="level-tag">ТОП-менеджеры</span>
+                        <span class="level-sub">ставка 18%</span>
+                      </div>
+                      <div class="stepper-wrap stepper-compact">
+                        <button type="button" class="stepper-btn form-vac-minus" data-target="vacTop" aria-label="Меньше">-</button>
+                        <input type="number" id="vacTop" name="vacTop" class="calc-input-stepper" min="0" max="999" value="0">
+                        <button type="button" class="stepper-btn form-vac-plus" data-target="vacTop" aria-label="Больше">+</button>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="form-error-msg" id="errVacTotal">Укажите хотя бы одну вакансию для подбора</div>
+                </div>
+
+                <!-- ФИ (Фамилия и Имя) -->
+                <div class="form-group">
+                  <label for="fullName">ФИ (Фамилия и Имя) <span class="req">*</span></label>
+                  <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Иван Иванов" required>
+                  <div class="form-error-msg" id="errFullName">Пожалуйста, укажите ваши имя и фамилию</div>
+                </div>
+
+                <!-- Номер телефона -->
+                <div class="form-group">
+                  <label for="phone">Номер телефона <span class="req">*</span></label>
+                  <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                  <div class="form-error-msg" id="errPhone">Введите корректный номер телефона (10 цифр)</div>
+                </div>
+
+                <!-- Дополнительный способ связи (при необходимости) -->
+                <div class="form-group">
+                  <label for="extraContact">Дополнительный способ связи (при необходимости)</label>
+                  <input type="text" id="extraContact" name="extraContact" class="form-input" placeholder="Telegram @username, WhatsApp или email">
+                </div>
+
+                <!-- Примечание о получателях заявки -->
+                <div class="form-notice">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <span>Заявка отправляется напрямую на почту экспертам агентства: <strong>olga.tkach@tkachi.pro</strong> и <strong>ilya.zotov@tkachi.pro</strong></span>
+                </div>
+
+                <!-- Кнопка «отправить» -->
+                <div class="form-submit-row">
+                  <button type="submit" class="btn-form-submit" id="submitAppBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    <span>Отправить заявку</span>
+                  </button>
+                </div>
+
+              </form>
+
+              <!-- Состояние успешной отправки -->
+              <div class="form-success-box" id="formSuccessBox" style="display: none;">
+                <div class="success-icon-wrap">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <h3 class="success-title">Заявка успешно отправлена!</h3>
+                <p class="success-text" id="successTextMain">
+                  Спасибо за обращение! Ваша заявка успешно направлена на почту кураторам агентства: <strong>olga.tkach@tkachi.pro</strong> и <strong>ilya.zotov@tkachi.pro</strong>.
+                </p>
+                <p class="success-text">
+                  Мы свяжемся с вами в течение 15 минут для обсуждения профиля должности.
+                </p>
+                <div class="delivery-status-note" id="emailDeliveryStatus" style="display: none;"></div>
+                <div class="success-actions">
+                  <button type="button" class="btn-reset-form" id="resetFormBtn">
+                    Отправить ещё одну заявку
+                  </button>
+                  <a href="mailto:ilya.zotov@tkachi.pro,olga.tkach@tkachi.pro" class="btn-direct-mailto" id="successDirectMailBtn" style="display: none;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span>Открыть копию в почтовой программе</span>
+                  </a>
+                  <p class="direct-contact-hint">
+                    Или свяжитесь напрямую: <a href="mailto:ilya.zotov@tkachi.pro">ilya.zotov@tkachi.pro</a> • <a href="mailto:olga.tkach@tkachi.pro">olga.tkach@tkachi.pro</a> • <a href="tel:+79021898350">+7 (902) 189-83-50</a>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 3. Контакты создателей (на десктопе под текстом об агентстве, на мобильных — внизу после блоков) -->
+        <div class="founders-info" id="foundersInfo">
+          <div class="founders-names">
+            <strong>Ольга Ткач &amp; Илья Зотов</strong>
+            <span>Партнеры &amp; Эксперты по подбору персонала</span>
+          </div>
+          <div class="contact-links">
+            <a href="tel:+79021898350" class="contact-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              +7 (902) 189-83-50
+            </a>
+            <a href="mailto:ilya.zotov@tkachi.pro" class="contact-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              ilya.zotov@tkachi.pro
+            </a>
+            <a href="mailto:olga.tkach@tkachi.pro" class="contact-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              olga.tkach@tkachi.pro
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал сайта (Footer) -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <span class="footer-logo-text">TKACH<span class="red-dot-i"><span class="dotless-i">ı</span></span></span>
+          <span class="footer-slogan">Агентство экспертного подбора персонала</span>
+        </div>
+        <p class="footer-copy">© 2026 TKACHi. Все права защищены. Подбор персонала по всей России.</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-contacts">
+          <a href="tel:+79021898350">+7 (902) 189-83-50</a>
+          <a href="mailto:olga.tkach@tkachi.pro">olga.tkach@tkachi.pro</a>
+          <a href="mailto:ilya.zotov@tkachi.pro">ilya.zotov@tkachi.pro</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
